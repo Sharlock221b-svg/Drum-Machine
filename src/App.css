@@ -1,0 +1,8 @@
+.App{
+  box: border-box;
+  display: relative;
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; 
+}
