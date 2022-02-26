@@ -1,8 +1,41 @@
 .App{
-  box: border-box;
-  display: relative;
-  border: 2px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%; 
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.drum-pad{
+  
+      position: relative;
+    float: left;
+    width: 90px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding-top: 35px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 2px solid #92D4D4;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: #92D4D4
+}
+
+.cont{
+     width: 332px;
+    height: 272px;
+    display: inline-block;
+    margin: 20px;
+     outline: 5px solid black;
+    position: relative;
+   
+    text-align: center;
+    background-color: #b3b3b3;
+}
+
+div{
+  block: inline-block;
 }
