@@ -28,12 +28,9 @@ export default function Button(props) {
   };
 
   React.useEffect(() => {
-      
     document.addEventListener('keydown', handle);
-    return () => {
-      document.removeEventListener('keydown', handle);
-    };
-  }, [handle])
+    
+  },[])
 
   return (
     <div class="drum-pad" id={props.id} onClick={play}>

@@ -1,25 +1,30 @@
 import React from "react"
 import  {bankOne} from "./data.js"
+import {bankTwo} from "./data2.js"
 import Button from "./Button.js"
 
-/*
-     keyCode: 81,
-    keyTrigger: 'Q',
-    id: 'Heater-1',
-    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
-*/
 
 export default function PreButton(props) {
+
   
-  const button = bankOne.map((bankOne) =>(
-    
-      <Button keyCode={bankOne.keyCode} keyTrigger={bankOne.keyTrigger} id={bankOne.id} url={bankOne.url} setPhrase={props.setPhrase} power={props.power}/>  
- 
-));
+   let but = [];
+
+   if(props.bank){
+        but = bankOne.map((x) => (
+           <Button keyCode={x.keyCode} keyTrigger={x.keyTrigger} id={x.id} url={x.url} setPhrase={props.setPhrase} power={props.power}/> 
+        ));
+      }
+      else{
+         but = bankTwo.map((x) => (
+           <Button keyCode={x.keyCode} keyTrigger={x.keyTrigger} id={x.id} url={x.url} setPhrase={props.setPhrase} power={props.power}/> 
+        ));
+      }
+
+  
   
   return (
     <div id="cont">
-    {button}
+    {but}
     </div>
   );
 }
