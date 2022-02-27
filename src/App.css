@@ -40,6 +40,8 @@
 #display{
    width: 332px;
    background-color: #7d8281;
+   border-radius: 3px;
+   text-align: center;
 }
 
 .pow{
