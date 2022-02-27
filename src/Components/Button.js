@@ -7,31 +7,38 @@ import React from "react"
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
 */
 
-export default function Button(props){
-  
-  function handle(event){
-        if(event.keyCode === props.keyCode){
-              play();
-        }
-  }
-
-  function play(){
-     const sound = document.getElementById(props.keyTrigger);
-     sound.play();
-     props.setPhrase(props.id);
+export default function Button(props) {
+  const handle = React.useCallback((event) => {
+    if (event.keyCode === props.keyCode) {
+      if (!props.power) {
+        return;
+      }
+      const sound = document.getElementById(props.keyTrigger);
+      sound.play();
+      props.setPhrase(props.id);
+    }
+  })
+  function play() {
+    if (!props.power) {
+      return;
+    }
+    const sound = document.getElementById(props.keyTrigger);
+    sound.play();
+    props.setPhrase(props.id);
   };
-  
-  React.useEffect(() =>{
-    document.addEventListener('keydown',handle);
+
+  React.useEffect(() => {
+      
+    document.addEventListener('keydown', handle);
     return () => {
-      document.removeEventListener('keydown',handle);
+      document.removeEventListener('keydown', handle);
     };
-  },[])
-  
-  return(
+  }, [handle])
+
+  return (
     <div class="drum-pad" id={props.id} onClick={play}>
-     <audio className="clip" id={props.keyTrigger} src={props.url} preload="auto"/>
-     {props.keyTrigger}
+      <audio className="clip" id={props.keyTrigger} src={props.url} preload="auto" />
+      {props.keyTrigger}
     </div>
-  );
+  )
 }

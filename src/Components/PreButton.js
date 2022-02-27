@@ -13,7 +13,7 @@ export default function PreButton(props) {
   
   const button = bankOne.map((bankOne) =>(
     
-      <Button keyCode={bankOne.keyCode} keyTrigger={bankOne.keyTrigger} id={bankOne.id} url={bankOne.url} setPhrase={props.setPhrase}/>  
+      <Button keyCode={bankOne.keyCode} keyTrigger={bankOne.keyTrigger} id={bankOne.id} url={bankOne.url} setPhrase={props.setPhrase} power={props.power}/>  
  
 ));
   
