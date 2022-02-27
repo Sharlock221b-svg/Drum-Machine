@@ -11,13 +11,17 @@ export default function Button(props){
   
   function handle(event){
         if(event.keyCode === props.keyCode){
-         const sound = document.getElementById(props.id);
-         sound.play();
+              play();
         }
   }
+
+  function play(){
+     const sound = document.getElementById(props.keyTrigger);
+     sound.play();
+     props.setPhrase(props.id);
+  };
   
   React.useEffect(() =>{
-     
     document.addEventListener('keydown',handle);
     return () => {
       document.removeEventListener('keydown',handle);
@@ -25,8 +29,8 @@ export default function Button(props){
   },[])
   
   return(
-    <div className="drum-pad">
-     <audio id={props.id} src={props.url} preload="auto"/>
+    <div class="drum-pad" id={props.id} onClick={play}>
+     <audio className="clip" id={props.keyTrigger} src={props.url} preload="auto"/>
      {props.keyTrigger}
     </div>
   );

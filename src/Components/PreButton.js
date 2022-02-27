@@ -9,16 +9,16 @@ import Button from "./Button.js"
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
 */
 
-export default function PreButton() {
+export default function PreButton(props) {
   
   const button = bankOne.map((bankOne) =>(
     
-      <Button keyCode={bankOne.keyCode} keyTrigger={bankOne.keyTrigger} id={bankOne.id} url={bankOne.url}/>  
+      <Button keyCode={bankOne.keyCode} keyTrigger={bankOne.keyTrigger} id={bankOne.id} url={bankOne.url} setPhrase={props.setPhrase}/>  
  
 ));
   
   return (
-    <div className="cont">
+    <div id="cont">
     {button}
     </div>
   );

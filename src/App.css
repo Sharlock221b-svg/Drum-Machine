@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 .drum-pad{
@@ -23,7 +24,7 @@
     background-color: #92D4D4;
 }
 
-.cont{
+#cont{
      width: 332px;
     height: 280px;
     display: inline-block;
@@ -35,3 +36,7 @@
      border-radius: 3px;
 }
 
+#display{
+   width: 332px;
+   background-color: #7d8281;
+}
