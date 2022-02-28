@@ -10,11 +10,13 @@ import React from "react"
 export default function Button(props) {
   const handle = React.useCallback((event) => {
     if (event.keyCode === props.keyCode) {
+     
       if (!props.power) {
         return;
       }
       const sound = document.getElementById(props.keyTrigger);
       sound.play();
+      sound.volume = props.volume;
       props.setPhrase(props.id);
     }
   })
@@ -24,13 +26,23 @@ export default function Button(props) {
     }
     const sound = document.getElementById(props.keyTrigger);
     sound.play();
+     sound.volume = props.volume;
     props.setPhrase(props.id);
   };
 
   React.useEffect(() => {
     document.addEventListener('keydown', handle);
-    
+    return ()=> {
+      document.removeEventListener('keydown',handle);
+   }
   },[])
+
+   React.useEffect(() => {
+    document.addEventListener('keydown', handle);
+     return ()=> {
+      document.removeEventListener('keydown',handle);
+   }
+  },[props.power,props.volume])
 
   return (
     <div class="drum-pad" id={props.id} onClick={play}>

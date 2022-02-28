@@ -4,6 +4,7 @@ export default function Volume(props){
 
   return (
     <div>
+     <h3 id="powText">Volume</h3>
      <input
           type="range"
           min={0}

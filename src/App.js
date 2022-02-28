@@ -17,12 +17,15 @@ function App() {
     setPhrase(val)
   }
 
+  function handlePower(){
+    setPower(!power);
+  }
 
   return (
     <div className="App" id="drum-machine" >
-       <Power power={power} setPower={setPower} setPhrase={handle}/>
+       <Power power={power} setPower={handlePower} setPhrase={handle}/>
        <Bank bank={bank} setbank={setbank}/>
-       <PreButton setPhrase={handle} power={power} bank={bank}/>
+       <PreButton setPhrase={handle} power={power} bank={bank} volume={volume}/>
        <Display phrase={phrase}/>
         <Volume volume={volume} setVolume={setVolume}/>
     </div>

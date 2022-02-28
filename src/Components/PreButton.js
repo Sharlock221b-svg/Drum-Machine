@@ -11,12 +11,14 @@ export default function PreButton(props) {
 
    if(props.bank){
         but = bankOne.map((x) => (
-           <Button keyCode={x.keyCode} keyTrigger={x.keyTrigger} id={x.id} url={x.url} setPhrase={props.setPhrase} power={props.power}/> 
+           <Button keyCode={x.keyCode} keyTrigger={x.keyTrigger} id={x.id} url={x.url} setPhrase={props.setPhrase} power={props.power}
+volume={props.volume}/> 
         ));
       }
       else{
          but = bankTwo.map((x) => (
-           <Button keyCode={x.keyCode} keyTrigger={x.keyTrigger} id={x.id} url={x.url} setPhrase={props.setPhrase} power={props.power}/> 
+           <Button keyCode={x.keyCode} keyTrigger={x.keyTrigger} id={x.id} url={x.url} setPhrase={props.setPhrase} power={props.power}
+volume={props.volume}/> 
         ));
       }
 
