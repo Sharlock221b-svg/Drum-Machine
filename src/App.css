@@ -1,3 +1,10 @@
+body{
+  background-color: #B2B2F8;
+  font-family: 'Roboto Slab', serif;
+}
+*{
+  font-family: 'Roboto Slab', serif;
+}
 .App{
     display: flex;
     justify-content: center;
@@ -16,12 +23,11 @@
     padding-top: 35px;
     box-sizing: border-box;
     cursor: pointer;
-    border: 2px solid #92D4D4;
 
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
-    background-color: #92D4D4;
+    background-color: #F48383;
 }
 
 #cont{
@@ -29,17 +35,19 @@
     height: 280px;
     display: inline-block;
     margin: 20px;
-     outline: 5px solid #D49292;
+     outline: 5px solid ##8383F4;
     position: relative;
     text-align: center;
-    background-color:#D49292;
-     border-radius: 3px;
+    background-color: #8383F4;
+  border-radius: 3px;
     margin-top: 0px;
+  padding: 20px;
 }
 
 #display{
    width: 332px;
-   background-color: #7d8281;
+   background-color: #F4F483;
+   min-height: 50px;
    border-radius: 3px;
    text-align: center;
 }
@@ -51,6 +59,7 @@
   height: 20px;
   background-color: black;
   margin-bottom: 10px;
+   cursor: pointer;
 }
 
 .lBox{
@@ -69,4 +78,17 @@
 
 #powText{
   margin-bottom: 0px;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.power{
+  margin-right : 180px;
+   box-sizing: border-box;
+  justify-self: start;
+ 
 }

@@ -23,8 +23,14 @@ function App() {
 
   return (
     <div className="App" id="drum-machine" >
+    <div className="nav">
+     <div className="power">
        <Power power={power} setPower={handlePower} setPhrase={handle}/>
+    </div>
+    <div className="ban">
        <Bank bank={bank} setbank={setbank}/>
+    </div>
+    </div>
        <PreButton setPhrase={handle} power={power} bank={bank} volume={volume}/>
        <Display phrase={phrase}/>
         <Volume volume={volume} setVolume={setVolume}/>
